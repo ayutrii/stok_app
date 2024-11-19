@@ -11,7 +11,7 @@ class suplierController extends Controller
      */
     public function index()
     {
-        //
+        return view('Suplier.suplier');
     }
 
     /**
@@ -19,7 +19,7 @@ class suplierController extends Controller
      */
     public function create()
     {
-        //
+        return view('Suplier.addSuplier');
     }
 
     /**
