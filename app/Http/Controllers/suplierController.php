@@ -27,7 +27,6 @@ class suplierController extends Controller
             'data'
         ));
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -137,6 +136,12 @@ class suplierController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $getSuplier = suplier::find($id);
+        $getSuplier->delete();
+
+        return redirect()->back()->with(
+            'message',
+            'Data' . $getSuplier->nama_suplier . ' berhasil dihapus',
+        );
     }
 }
