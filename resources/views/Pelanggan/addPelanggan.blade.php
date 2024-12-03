@@ -49,16 +49,16 @@
                             </div>
 
                             <div class="form-outline mb-4">
-                                <label class="form-label" for="jenis_kelamin">Jenis Kelamin</label>
+                                <label class="form-label" for="Jenis_kelamin">Jenis Kelamin</label>
                                 <div class="input-group">
-                                  <select value="{{ old('jenis_kelamin') ?? '' }}" name="jenis_kelamin" class="form-control @error('jenis_kelamin') is-invalid @enderror" id="">
+                                  <select value="{{ old('Jenis_kelamin') ?? '' }}" name="Jenis_kelamin" class="form-control @error('Jenis_kelamin') is-invalid @enderror" id="">
                                     <option value="">-- Jenis Kelamin --</option>
-                                    <option value="Laki-Laki" {{ old('jenis_kelamin') == 'Laki-Laki' ? 'selected' : '' }}>Laki-Laki</option>
-                                    <option value="Perempuan" {{ old('jenis_kelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                                    <option value="Laki-Laki" {{ old('Jenis_kelamin') == 'Laki-Laki' ? 'selected' : '' }}>Laki-Laki</option>
+                                    <option value="Perempuan" {{ old('Jenis_kelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
                                   </select>
                                   <span class="input-group-text"><i class="bi bi-caret-down-fill"></i></span>
                                 </div>
-                                @error('jenis_kelamin')
+                                @error('Jenis_kelamin')
                                   <div class="invalid-feedback">
                                     {{$message}}
                                   </div>

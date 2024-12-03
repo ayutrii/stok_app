@@ -26,7 +26,7 @@
                                 <label class="form-label" for="nama_pelanggan">Nama Pelanggan</label>
                                 <div class="input-group">
                                     <span class="input-group-text bg-primary text-white"><i class="bi bi-person"></i></span>
-                                    <input type="text" value="{{ old('nama_pelanggan') }}" name="nama_pelanggan" id="nama_pelanggan" class="form-control @error('nama_pelanggan') is-invalid @enderror" placeholder="Masukkan Nama Pelanggan..."/>
+                                    <input type="text" value="{{ old('nama_pelanggan', $getData->nama_pelanggan) }}" name="nama_pelanggan" id="nama_pelanggan" class="form-control @error('nama_pelanggan') is-invalid @enderror" placeholder="Masukkan Nama Pelanggan..."/>
                                     @error('nama_pelanggan')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -39,7 +39,7 @@
                                 <label class="form-label" for="telp">Nomor Telepon</label>
                                 <div class="input-group">
                                     <span class="input-group-text bg-primary text-white"><i class="bi bi-phone"></i></span>
-                                    <input type="number" value="{{ old('telp') }}" name="telp" id="telp" class="form-control @error('telp') is-invalid @enderror" placeholder="Masukkan Nomor Telepon Pelanggan..."/>
+                                    <input type="number" value="{{ old('telp', $getData->telp) }}" name="telp" id="telp" class="form-control @error('telp') is-invalid @enderror" placeholder="Masukkan Nomor Telepon Pelanggan..."/>
                                     @error('telp')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -51,10 +51,14 @@
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="jenis_kelamin">Jenis Kelamin</label>
                                 <div class="input-group">
-                                  
+                                    <select value="{{ old('Jenis_kelamin') ?? '' }}" name="Jenis_kelamin" class="form-control @error('Jenis_kelamin') is-invalid @enderror">
+                                        <option value="">--Jenis kelamin--</option>
+                                        <option value="Laki-Laki" {{ old('Jenis_kelamin', $getData->Jenis_kelamin == 'Laki-Laki' ? 'selected' : '' ) }}>Laki-Laki</option>
+                                        <option value="Perempuan" {{ old('Jenis_kelamin', $getData->Jenis_kelamin == 'Perempuan' ? 'selected' : '' ) }}>Perempuan</option>
+                                    </select>
                                   <span class="input-group-text"><i class="bi bi-caret-down-fill"></i></span>
                                 </div>
-                                @error('jenis_kelamin')
+                                @error('Jenis_kelamin')
                                   <div class="invalid-feedback">
                                     {{$message}}
                                   </div>
@@ -65,7 +69,7 @@
                                 <label class="form-label" for="alamat">Alamat</label>
                                 <div class="input-group">
                                     <span class="input-group-text bg-primary text-white"><i class="bi bi-map"></i></span>
-                                    <textarea name="alamat" id="" cols="10" rows="3" class="form-control @error('alamat') is-invalid @enderror" placeholder="Masukkan Alamat Pelanggan...">  </textarea>
+                                    <textarea name="alamat" id="" cols="10" rows="3" class="form-control @error('alamat') is-invalid @enderror" placeholder="Masukkan Alamat Pelanggan...">{{ $getData->alamat }}  </textarea>
                                     @error('alamat')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -79,7 +83,7 @@
                                     <label class="form-label" for="kota">Kota</label>
                                     <div class="input-group">
                                         <span class="input-group-text bg-primary text-white"><i class="bi bi-pin"></i></span>
-                                        <input type="text" value="{{ old('kota') }}" name="kota" id="kota" class="form-control @error('kota') is-invalid @enderror" placeholder="Masukkan Kota..."/>
+                                        <input type="text" value="{{ old('kota', $getData->kota) }}" name="kota" id="kota" class="form-control @error('kota') is-invalid @enderror" placeholder="Masukkan Kota..."/>
                                         @error('kota')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -91,7 +95,7 @@
                                     <label class="form-label" for="provinsi">Provinsi</label>
                                     <div class="input-group">
                                         <span class="input-group-text bg-primary text-white"><i class="bi bi-map"></i></span>
-                                        <input type="text" value="{{ old('provinsi') }}" name="provinsi" id="provinsi" class="form-control @error('provinsi') is-invalid @enderror" placeholder="Masukkan Provinsi..."/>
+                                        <input type="text" value="{{ old('provinsi', $getData->provinsi) }}" name="provinsi" id="provinsi" class="form-control @error('provinsi') is-invalid @enderror" placeholder="Masukkan Provinsi..."/>
                                         @error('provinsi')
                                             <div class="invalid-feedback">
                                                 {{ $message }}

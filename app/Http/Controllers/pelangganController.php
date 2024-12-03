@@ -12,7 +12,10 @@ class pelangganController extends Controller
      */
     public function index()
     {
-        return view('Pelanggan.pelanggan');
+        $getData = pelanggan::paginate();
+        return view('Pelanggan.pelanggan', compact(
+            'getData',
+        ));
     }
 
     /**
@@ -29,16 +32,16 @@ class pelangganController extends Controller
     public function store(Request $request)
     {
         $valueData = $request->validate([
-            'nama_suplier' => 'required',
+            'nama_pelanggan' => 'required',
             'telp' => 'required',
-            'jenis_kelamin' => 'required',
+            'Jenis_kelamin' => 'required',
             'alamat' => 'required',
             'kota' => 'required',
             'provinsi' => 'required'
         ],[
             'nama_pelanggan.required' => 'Data Wajib Diisi!',
             'telp.required' => 'Data Wajib Diisi!',
-            'jenis_kelamin.email' => 'Format email tidak sesuai!',
+            'Jenis_kelamin.required' => 'Data Wajib Diisi!',
             'alamat.required' => 'Data Wajib Diisi!',
             'kota.required' => 'Data Wajib Diisi!',
             'provinsi.required' => 'Data Wajib Diisi!',
@@ -65,9 +68,9 @@ class pelangganController extends Controller
      */
     public function edit(string $id)
     {
-        $getPelanggan = pelanggan::find($id);
+        $getData = pelanggan::find($id);
         return view('Pelanggan.editPelanggan', compact(
-            'getPelanggan',
+            'getData',
         ));
     }
 
@@ -76,7 +79,36 @@ class pelangganController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'nama_pelanggan' => 'required',
+            'telp' => 'required',
+            'Jenis_kelamin' => 'required',
+            'alamat' => 'required',
+            'kota' => 'required',
+            'provinsi' => 'required',
+        ],[
+            'nama_pelanggan.required' => 'Data Wajib Diisi!',
+            'telp.required' => 'Data Wajib Diisi!',
+            'Jenis_kelamin.required' => 'Data Wajib Diisi!',
+            'alamat.required' => 'Data Wajib Diisi!',
+            'kota.required' => 'Data Wajib Diisi!',
+            'provinsi.required' => 'Data Wajib Diisi!',
+        ]);
+
+        $updatePelanggan = pelanggan::find($id);
+        $updatePelanggan->nama_pelanggan = $request->nama_pelanggan;
+        $updatePelanggan->telp = $request->telp;
+        $updatePelanggan->Jenis_kelamin = $request->Jenis_kelamin;
+        $updatePelanggan->alamat = $request->alamat;
+        $updatePelanggan->kota = $request->kota;
+        $updatePelanggan->provinsi = $request->provinsi;
+        $updatePelanggan->save();
+
+        return redirect('/pelanggan')->with(
+             'message',
+             'Data pelanggan' . $request->nama_pelanggan . ' Berhasil diperbaharui'
+        );
+       
     }
 
     /**

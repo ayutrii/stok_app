@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_pelanggan');
             $table->string('telp');
-            $table->enum('Jenis Kelamin', ['Laki-Laki', 'Perempuan']);
+            $table->enum('Jenis_kelamin', ['Laki-Laki', 'Perempuan']);
             $table->text('alamat');
             $table->string('kota');
             $table->string('provinsi');

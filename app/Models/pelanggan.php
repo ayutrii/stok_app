@@ -11,8 +11,9 @@ class pelanggan extends Model
     protected $fillable  = [
         'nama_pelanggan',
         'telp',
-        'jenis_kelamin',
-        'alamat', 'kota',
-        'provinsi'
+        'Jenis_kelamin',
+        'alamat', 
+        'kota',
+        'provinsi',
     ];
 }

@@ -72,15 +72,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($getData as $item)
+                                @foreach ($getData as $item)
                                     <tr>
                                         <td class="text-center">
                                             {{ (($getData->currentPage() - 1) * $getData->perPage()) + $loop->iteration }} 
                                         </td>
                                         <td>{{ $item->nama_pelanggan }} </td>
                                         <td class="text-center">{{ $item->telp }} </td>
-                                        <td class="text-center">{{ $item->jenis_kelamin }} </td>
-                                        <td>{{ $item->alamat}} </td>
+                                        <td class="text-center">{{ $item->Jenis_kelamin }} </td>
+
+                                        {{-- baris dibawah ini untuk trim/memotong huruf yang tampil--}}
+                                        <td>{{ \Illuminate\Support\Str::limit($item->alamat, 30, '..')}} </td>
+
                                         <td class="text-center">{{ $item->kota }} </td>
                                         <td class="text-center">{{ $item->provinsi }} </td>
                                         <td class="text-center">
@@ -94,10 +97,10 @@
                                             </a>
                                         </td>
                                     </tr>   
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
-                        {{-- {{ $getData->links() }} --}}
+                        {{ $getData->links() }}
 
                     </div>
                 </div>
