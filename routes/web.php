@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\pegawaiController;
 use App\Http\Controllers\pelangganController;
+use App\Http\Controllers\stokController;
 use App\Http\Controllers\suplierController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,12 @@ Route::middleware(['auth', 'cekLevel:superadmin,admin'])->group(function(){
      /**
       * Ini route stok
       */
+      Route::controller(stokController::class)->group(function(){
+         Route::get('/stok', 'index');
+
+         Route::get('/stok/add', 'create');
+
+      });
 
        /**
       * Ini route barang masuk
