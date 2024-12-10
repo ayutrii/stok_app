@@ -75,7 +75,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($getData as $item)
+                                @foreach ($getData as $item)
                                     <tr style="background-color: #434343">
                                         <td class="text-center">
                                             {{ (($getData->currentPage() - 1) * $getData->perPage()) + $loop->iteration }} 
@@ -100,10 +100,10 @@
                                             </a>
                                         </td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
-                        {{-- {{ $getData->links() }} --}}
+                        {{ $getData->links() }}
 
                     </div>
                 </div>

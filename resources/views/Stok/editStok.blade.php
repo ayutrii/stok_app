@@ -88,12 +88,12 @@ Stok
                                             <span class="input-group-text text-light bg-primary"><i class="bi bi-person-bounding-box"></i></span>
                                             <select name="suplier" class="form-control @error('suplier') is-invalid @enderror" id="suplier">
                                                 <option value="">--Pilih Suplier--</option>
-                                                {{-- @foreach ($suplier as $item)
+                                                @foreach ($suplier as $item)
                                                     <option value="{{ $item->id }}" 
                                                         {{ (old('suplier') ? old('suplier') : $getDataStokId->getSuplier->id) == $item->id ? 'selected' : '' }}>
                                                         {{ $item->nama_suplier }}
                                                     </option>
-                                                @endforeach --}}
+                                                @endforeach
                                             </select>
                                             @error('suplier')
                                                 <div class="invalid-feedback">
