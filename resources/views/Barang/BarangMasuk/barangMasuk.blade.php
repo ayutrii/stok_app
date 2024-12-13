@@ -104,10 +104,35 @@ Barang Masuk
                             <th class="">Harga Beli</th>
                             <th class="text-center">Jumlah</th>
                             <th class="text-center">Admin</th>
-                            <th class="text-center">Cabang</th>
+                            {{-- <th class="text-center">Cabang</th> --}}
                             <th class="text-center">Aksi</th>
                         </thead>
                         <tbody>
+                            @foreach ( $getData as $item )
+                            <tr>
+                                <td class="text-center">
+                                    {{(($getData->currentPage() -1) * $getData->perPage()) + $loop->iteration}}
+                                </td>
+                                <td class="text-center" width='128px'>{{ Carbon\Carbon::parse($item->tanggal_faktur)->format('d-m-Y') }}</td>
+                                <td>{{ $item->getStok->nama_barang}}</td>
+                                <td>{{ $item->getSuplier->nama_suplier }}</td>
+                                <td>{{ 'Rp' . number_format($item->harga_beli, 0, ',', '.') }}</td>
+                                <td class="text-center">{{$item->jumlah_barang_masuk}} </td>
+                                <td class="text-center"> {{$item->getAdmin->name}} </td>
+                                <td class="text-center">
+                                    <a
+                                     href="{{ url('/barang-masuk', ['id' => $item->id])}}"
+                                     class="btn btn-danger btn-sm"
+                                     onclick="return confirm('Menghapus data dapat menyebabkan beberapa kekeliruan dalam daya stok!!!, Yakin Hapus Data??')"
+                                     title="Hapus">
+                                    <i class= "bi bi-trash"></i>
+                                    </a>
+                                </td>
+                                
+
+                            </tr>
+                                
+                            @endforeach
                             
                         </tbody>
                         
