@@ -28,10 +28,10 @@ Barang Keluar
                         <div class="row">
                             <div class="col">
                                 <p>Kode Transaksi :
-                                    {{-- @if(isset($kode_transaksi))
+                                    @if(isset($kode_transaksi))
                                         <strong>{{ $kode_transaksi }}</strong>
                                         <input hidden type="text" name="kode_transaksi" value="{{ $kode_transaksi }}">
-                                    @endif --}}
+                                    @endif
                                 </p>
                             </div>
                         </div>
@@ -71,11 +71,11 @@ Barang Keluar
                                         <span class="input-group-text text-light bg-primary"><i class="bi bi-person-bounding-box"></i></span>
                                         <select name="pelanggan_id" class="form-control @error('pelanggan_id') is-invalid @enderror" id="pelanggan_id">
                                             <option value="">--pelanggan--</option>
-                                            {{-- @foreach ($pelanggan as $item)
+                                            @foreach ($pelanggan as $item)
                                                 <option value="{{ $item->id }}" {{ old('pelanggan_id') == $item->id ? 'selected' : '' }}>
                                                     {{ $item->nama_pelanggan }} ===> {{ $item->kota}} ===> Telp: {{ $item->telp }}
                                                 </option>
-                                            @endforeach --}}
+                                            @endforeach
                                         </select>
                                         @error('pelanggan_id')
                                             <div class="invalid-feedback">
