@@ -31,18 +31,18 @@
                                 <td>Nama Pelanggan</td>
                             </tr>
                             <tr>
-                                {{-- <td><strong>{{ $jenis_pembayaran }}</strong></td>
+                                <td><strong>{{ $jenis_pembayaran }}</strong></td>
                                 <td><strong>{{ Carbon\Carbon::parse( $tgl_faktur )->format('d/m/Y') }}</strong></td>
                                 <td><strong>{{ Carbon\Carbon::parse( $tgl_jatuh_tempo )->format('d/m/Y') }}</strong></td>
-                                <td><strong>{{ $namaPelanggan }}</strong></td> --}}
+                                <td><strong>{{ $namaPelanggan }}</strong></td> 
                             </tr>
                         </table>
 
-                        {{-- <input hidden type="text" name="kode_transaksi" value="{{ $kode_transaksi }}">
+                         <input hidden type="text" name="kode_transaksi" value="{{ $kode_transaksi }}">
                         <input hidden type="text" name="tgl_faktur" value="{{ $tgl_faktur }}">
                         <input hidden type="text" name="tgl_jatuh_tempo" value="{{ $tgl_jatuh_tempo }}">
                         <input hidden type="text" name="pelanggan_id" value="{{ $pelanggan_id }}">
-                        <input hidden type="text" name="jenis_pembayaran" value="{{ $jenis_pembayaran }}"> --}}
+                        <input hidden type="text" name="jenis_pembayaran" value="{{ $jenis_pembayaran }}"> 
 
                         <div class="row">
                             <div class="col">
@@ -51,11 +51,11 @@
                                     <div class="input-group">
                                         <select name="barang_id" class="form-control @error('barang_id') is-invalid @enderror" id="barang_id">
                                             <option value="">--Pilih Barang--</option>
-                                            {{-- @foreach ($getBarang as $item)
+                                            @foreach ($getBarang as $item)
                                                 <option value="{{ $item->id }}" {{ old('barang_id') == $item->id ? 'selected' : '' }}>
                                                     {{ $item->nama_barang }} |  {{ $item->getSuplier->nama_suplier }} | {{ 'Rp ' . number_format($item->harga, 0, ',', '.') }} | {{ 'Stok :'. $item->stok . 'Pcs'}}
                                                 </option>
-                                            @endforeach --}}
+                                            @endforeach
                                         </select>
                                         @error('barang_id')
                                             <div class="invalid-feedback">
@@ -126,7 +126,6 @@
                             </div>
                         </div>
 
-                        <input hidden type="text" name="cabang" value="Palembang">
 
                         <div class="container-fluid text-end">
                             <a href="{{ url('/barang-keluar/add') }}" class="btn btn-secondary btn-sm">Cancel <i class="bi bi-x"></i></a>
