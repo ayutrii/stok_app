@@ -86,8 +86,8 @@
                                         <div class="col-6 w-100 text-end">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h3>Total Pendapatan</h3>
-                                                    <h4>Rp120.000</h4>
+                                                    <h3>Total Pendapatan</h3> 
+                                                    <h4>{{'Rp' . number_format($getTotalPendapatan, 0, '.', '.') }}</h4>
                                                 </div>
                                             </div>
                                             {{-- <h5>Total Pendapatan</h5> --}}
@@ -120,7 +120,7 @@
                             <th class="text-center">Aksi</th>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($getBarangKeluar as $item)
+                            @foreach ($getBarangKeluar as $item)
                                 <tr>
                                     <td class="text-center">
                                         {{ (($getBarangKeluar->currentPage() - 1) * $getBarangKeluar->perPage()) + $loop->iteration }}
@@ -142,10 +142,10 @@
                                         </a>
                                     </td>
                                 </tr>
-                            @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
-                    {{-- {{ $getBarangKeluar->links() }} --}}
+                    {{ $getBarangKeluar->links() }}
 
                 </div>
             </div>

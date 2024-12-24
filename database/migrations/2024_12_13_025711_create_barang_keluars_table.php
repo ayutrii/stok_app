@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('barang_id');
             $table->bigInteger('jumlah_beli');
             $table->bigInteger('harga_jual');
-            $table->bigInteger('diskon');
+            $table->bigInteger('diskon')->nullable();
             $table->bigInteger('sub_total');
             $table->string('user_id');
             $table->date('tgl_buat');
