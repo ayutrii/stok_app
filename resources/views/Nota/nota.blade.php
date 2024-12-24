@@ -38,11 +38,11 @@
             <td style="text-align: center"><h3>PT. Smart Campus</h3></td>
             <td>
                 Tanggal: <span id="currentDate"></span><br>
-                {{-- Konsumen: {{ $dataPrint->getPelanggan->nama_pelanggan}} --}}
+                Konsumen: {{ $dataPrint->getPelanggan->nama_pelanggan}}
             </td>
         </tr>
     </table>
-    {{-- <p>Nomor Faktur: {{ $dataPrint->kode_transaksi}}</p> --}}
+    <p>Nomor Faktur: {{ $dataPrint->kode_transaksi}}</p>
     <table>
         <tr>
             <td class="td-produk"><strong>Nama Barang</strong></td>
@@ -52,7 +52,7 @@
             <td class="td-produk"><strong>Sub Total (Rp)</strong></td>
         </tr>
         <tr>
-            {{-- <td class="td-produk">{{ $dataPrint->getStok->nama_barang }}</td>
+            <td class="td-produk">{{ $dataPrint->getStok->nama_barang }}</td>
             <td class="td-produk">{{number_format($dataPrint->harga_jual, 0, ',', '.') }}</td>
             <td class="td-produk">{{ $dataPrint->jumlah_beli }}</td>
             <td class="td-produk">
@@ -62,12 +62,12 @@
                 {{ $dataPrint->diskon }}
                 @endif
             </td>
-            <td class="td-produk">{{ number_format($dataPrint->sub_total, 0, ',', '.') }}</td> --}}
+            <td class="td-produk">{{ number_format($dataPrint->sub_total, 0, ',', '.') }}</td>
         </tr>
         <tr>
-            {{-- <td class="td-produk">&nbsp;</td>
+            <td class="td-produk">&nbsp;</td>
             <td class="td-produk" colspan="2">Total Barang: {{ $dataPrint->jumlah_beli }}</td>
-            <td class="td-produk" colspan="3">Total Harga: {{ 'Rp ' . number_format($dataPrint->sub_total, 0, ',', '.') }}</td> --}}
+            <td class="td-produk" colspan="3">Total Harga: {{ 'Rp ' . number_format($dataPrint->sub_total, 0, ',', '.') }}</td>
 
         </tr>
     </table>
